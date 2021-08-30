@@ -60,6 +60,7 @@ const ShoppingListPage = ( props: Props ) =>
     React.useEffect( () =>
     {
         setI( props.viewModel.todoItems );
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ collectionData, sorterData ] )
 
     if ( error !== undefined )

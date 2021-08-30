@@ -8,8 +8,8 @@ import "firebase/database";
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { v4 as uuidv4 } from "uuid";
+import AppFrameContext from "../../AppFrame/AppFrame";
 import AuthContext from "../../AuthContext";
-import UiStateContext from "../../UiStateContext";
 
 const ShoppingListOverview = () =>
 {
@@ -19,6 +19,8 @@ const ShoppingListOverview = () =>
     const collection = authContext.storeProvider.collection( "shopping-lists" );
     const sortables = authContext.storeProvider.collection( "sorter" );
 
+    const appContext = useContext( AppFrameContext );
+
 
     const uid = authContext.authProvider.currentUser?.uid ?? "";
 
@@ -26,12 +28,10 @@ const ShoppingListOverview = () =>
 
     const theme = useTheme<Theme>();
 
-    const uiState = useContext( UiStateContext );
-
     const [ idToken, setIdToken ] = useState( "" );
 
     const [ docs, setDocs ] = useState<ShoppingListType[]>( [] )
-    const [ error, setError ] = useState<any>();
+    const [ , setError ] = useState<any>();
 
     const refresh = async () =>
     {
@@ -39,7 +39,7 @@ const ShoppingListOverview = () =>
         {
             try
             {
-                uiState.isLoading = true;
+                appContext.uiStateManager.isLoadingFullBlock = true;
                 const response = await ShoppingLists.Client.getShoppingLists( idToken );
                 response.lists.sort( ( left, right ) =>
                 {
@@ -54,7 +54,7 @@ const ShoppingListOverview = () =>
             }
             finally
             {
-                uiState.isLoading = false;
+                appContext.uiStateManager.isLoadingFullBlock = false;
             }
         }
     }

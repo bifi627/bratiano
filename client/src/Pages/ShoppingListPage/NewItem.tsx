@@ -5,8 +5,8 @@ import { ShoppingItem } from "common/src/Models/ShoppingListDefinitions";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { v4 } from "uuid";
+import AppFrameContext from "../../AppFrame/AppFrame";
 import AuthContext from "../../AuthContext";
-import UiStateContext from "../../UiStateContext";
 
 const Box = styled.div`
     display: flex;
@@ -19,6 +19,7 @@ const Box = styled.div`
 const ItemNew = ( props: { addItem: ( item: ShoppingItem ) => Promise<void> } ) =>
 {
     const authContext = useContext( AuthContext );
+    const appFrame = useContext( AppFrameContext );
 
     const openPhotoPicker = async () =>
     {
@@ -29,13 +30,11 @@ const ItemNew = ( props: { addItem: ( item: ShoppingItem ) => Promise<void> } ) 
         }
     }
 
-    const uiState = useContext( UiStateContext );
-
     const onFileChanged = async () =>
     {
         try
         {
-            uiState.isLoading = true;
+            appFrame.uiStateManager.isLoadingFullBlock = true;
             if ( imgRef.current && imgRef.current.files?.length === 1 )
             {
                 const myFile = imgRef.current.files[ 0 ];
@@ -62,7 +61,7 @@ const ItemNew = ( props: { addItem: ( item: ShoppingItem ) => Promise<void> } ) 
         }
         finally
         {
-            uiState.isLoading = false;
+            appFrame.uiStateManager.isLoadingFullBlock = false;
         }
     }
 
