@@ -1,0 +1,28 @@
+{
+  "exclude": [
+    "node_modules",
+    "dist",
+    "out",
+  ],
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "composite": true,
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "DOM",
+      "ES2015"
+    ],
+    // "rootDir": "./src",
+    // "outDir": "./out",
+    // "baseUrl": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "declaration": true,
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "exclude": [
+    "node_modules",
+    "dist",
+    "out",
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "target": "es5",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./out",
+    "baseUrl": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "./src/**/*.ts",
+    // "./src/firebaseAccount.json",
+  ],
+  "references": [
+    {
+      "path": "../common"
+    }
+  ]
+}
