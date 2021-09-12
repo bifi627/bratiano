@@ -1,11 +1,10 @@
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import AppFrameContext, { AppFrame, ContextMenuAction, ContextMenuNavigation } from "@pwa-frame/core/src/AppFrame";
+import DemoPage from "@pwa-frame/core/src/Pages/DemoPage";
 import { getServer, setServer } from "common/src/index";
 import { configure } from "mobx";
-import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import AppFrameContext, { AppFrame, ContextMenuAction, ContextMenuNavigation } from "./AppFrame/AppFrame";
-import DemoPage from "./AppFrame/Pages/DemoPage";
 import AuthContext, { AuthViewModel } from "./AuthContext";
 import Profile from "./Components/Profile/Profile";
 import ShoppingListOverview from "./Components/ShoppingListOverview/ShoppingListOverview";
@@ -26,7 +25,6 @@ const theme = createMuiTheme( {
         },
     },
 } );
-
 
 const server = process.env[ "REACT_APP_SERVER" ];
 

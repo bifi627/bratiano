@@ -1,6 +1,7 @@
 import { Avatar, Button, Checkbox, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Fab, FormControlLabel, IconButton, List, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText, TextField, Theme, useTheme } from "@material-ui/core";
 import { AccountCircle, Add, Delete, Share } from "@material-ui/icons";
 import PublicIcon from '@material-ui/icons/Public';
+import AppFrameContext from "@pwa-frame/core/src/AppFrame";
 import { DocumentAccess } from "common/src/Contracts/DocumentAccess";
 import { ShoppingLists } from "common/src/Contracts/ShoppingLists";
 import { ShoppingList as ShoppingListType, Sorter } from "common/src/Models/ShoppingListDefinitions";
@@ -8,7 +9,6 @@ import "firebase/database";
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { v4 as uuidv4 } from "uuid";
-import AppFrameContext from "../../AppFrame/AppFrame";
 import AuthContext from "../../AuthContext";
 
 const ShoppingListOverview = () =>

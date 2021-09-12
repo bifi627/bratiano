@@ -1,12 +1,12 @@
 import { Backdrop, CircularProgress } from "@material-ui/core";
+import AppFrameContext from "@pwa-frame/core/src/AppFrame";
+import Content from "@pwa-frame/core/src/Components/Content";
+import ContextMenu from "@pwa-frame/core/src/Components/ContextMenu";
+import Header from "@pwa-frame/core/src/Components/Header";
+import LeftDrawer from "@pwa-frame/core/src/Components/LeftDrawer";
 import { observer } from "mobx-react";
 import { useContext } from "react";
 import styled from "styled-components";
-import AppFrameContext from "../../AppFrame/AppFrame";
-import Content from "../../AppFrame/Components/Content";
-import ContextMenu from "../../AppFrame/Components/ContextMenu";
-import Header from "../../AppFrame/Components/Header";
-import LeftDrawer from "../../AppFrame/Components/LeftDrawer";
 import { StartPageViewModel } from "./StartPageViewModel";
 
 interface StartPage

@@ -1,11 +1,11 @@
 import { IconButton, TextField } from "@material-ui/core";
 import { Add, CameraAlt } from "@material-ui/icons";
+import AppFrameContext from "@pwa-frame/core/src/AppFrame";
 import imageCompression from "browser-image-compression";
 import { ShoppingItem } from "common/src/Models/ShoppingListDefinitions";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { v4 } from "uuid";
-import AppFrameContext from "../../AppFrame/AppFrame";
 import AuthContext from "../../AuthContext";
 
 const Box = styled.div`
