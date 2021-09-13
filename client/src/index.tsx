@@ -1,6 +1,6 @@
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import AppFrameContext, { AppFrame, ContextMenuAction, ContextMenuNavigation } from "@pwa-frame/core/src/AppFrame";
-import DemoPage from "@pwa-frame/core/src/Pages/DemoPage";
+import AppFrameContext, { AppFrame, ContextMenuAction, ContextMenuNavigation } from "@pwa-frame/core/dist/AppFrame";
+import DemoPage from "@pwa-frame/core/dist/Pages/DemoPage";
 import { getServer, setServer } from "common/src/index";
 import { configure } from "mobx";
 import ReactDOM from 'react-dom';

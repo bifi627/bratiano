@@ -1,9 +1,9 @@
 import { Backdrop, CircularProgress } from "@material-ui/core";
-import AppFrameContext from "@pwa-frame/core/src/AppFrame";
-import Content from "@pwa-frame/core/src/Components/Content";
-import ContextMenu from "@pwa-frame/core/src/Components/ContextMenu";
-import Header from "@pwa-frame/core/src/Components/Header";
-import LeftDrawer from "@pwa-frame/core/src/Components/LeftDrawer";
+import AppFrameContext from "@pwa-frame/core/dist/AppFrame";
+import Content from "@pwa-frame/core/dist/Components/Content";
+import ContextMenu from "@pwa-frame/core/dist/Components/ContextMenu";
+import Header from "@pwa-frame/core/dist/Components/Header";
+import LeftDrawer from "@pwa-frame/core/dist/Components/LeftDrawer";
 import { observer } from "mobx-react";
 import { useContext } from "react";
 import styled from "styled-components";

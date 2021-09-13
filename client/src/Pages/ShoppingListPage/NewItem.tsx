@@ -1,6 +1,6 @@
 import { IconButton, TextField } from "@material-ui/core";
 import { Add, CameraAlt } from "@material-ui/icons";
-import AppFrameContext from "@pwa-frame/core/src/AppFrame";
+import AppFrameContext from "@pwa-frame/core/dist/AppFrame";
 import imageCompression from "browser-image-compression";
 import { ShoppingItem } from "common/src/Models/ShoppingListDefinitions";
 import React, { useContext } from "react";

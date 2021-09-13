@@ -27,13 +27,18 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-
+      - name: Compile common
+        working-directory: ./common
+        run: |
+          npm i
+          tsc -b
       - name: Compile client
-      - working-directory: ./client
-      - run: npm i
-        run: npm run build
+        working-directory: ./client
+        run: |
+          npm i
+          tsc -b
+          npm run build
 
-      - name: Compile server
-      - working-directory: ./server
-      - run: npm i
-        run: npm run build
+      # - name: Compile server
+      # - working-directory: ./server
+      # - run: npm i | npm run build
