@@ -47,6 +47,7 @@ const ioServer = new io.Server( httpServer, serverConfig );
 ioServer.use( firebaseAuthMiddleware );
 const connectionManager = new ConnectionManager( ioServer );
 
+console.log( "onStartUp maintanance started..." );
 onStartup().then( () =>
 {
     console.log( "onStartUp maintanance finished..." );
