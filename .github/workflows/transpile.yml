@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Transpile only
 
 # Controls when the workflow will run
 on:
@@ -32,13 +32,13 @@ jobs:
         run: |
           npm i
           tsc -b
+      - name: Compile server
+        working-directory: ./server
+        run: |
+          npm i
+          tsc -b
       - name: Compile client
         working-directory: ./client
         run: |
           npm i
           tsc -b
-          npm run build
-
-      # - name: Compile server
-      # - working-directory: ./server
-      # - run: npm i | npm run build
