@@ -11,7 +11,16 @@ import ConnectionManager from "./modules/connection";
 import { onStartup } from "./modules/maintanence";
 import { createSharedDocAccess, getSharedDocAccess } from "./modules/sharedDocumentAccessHandler";
 import { shoppingListsDataProvider } from "./modules/shoppingListsHandler";
-const firebaseAccount = require( "../firebaseAccount.json" );
+
+let firebaseAccount: admin.ServiceAccount;
+if ( process.env.FIREBASE_ACCOUNT !== undefined && process.env.FIREBASE_ACCOUNT !== "" )
+{
+    firebaseAccount = JSON.parse( process.env.FIREBASE_ACCOUNT );
+}
+else
+{
+    firebaseAccount = require( "../firebaseAccount.json" );
+}
 
 const app = express();
 

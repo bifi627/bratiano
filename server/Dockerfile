@@ -2,7 +2,7 @@ FROM node:12-slim
 
 WORKDIR /app
 
-COPY ./server/package*.json .
+COPY ./server/package*.json ./ 
 
 COPY ./server ./app
 
