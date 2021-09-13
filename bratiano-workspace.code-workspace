@@ -46,5 +46,6 @@
 		},
 		"javascript.preferences.quoteStyle": "double",
 		"typescript.preferences.quoteStyle": "double",
+		"typescript.tsdk": "./client/node_modules/typescript/lib",
 	}
 }
