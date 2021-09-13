@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { getServer } from "..";
 import { useBearerToken } from "../Hooks/serverHooks";
 import { ShoppingList } from "../Models/ShoppingListDefinitions";
-import { createAuthHeader } from "./Base";
+import { createAutherizedRequest } from "./Settings";
 
 export namespace ShoppingLists
 {
@@ -12,7 +12,7 @@ export namespace ShoppingLists
     {
         export async function getShoppingLists( idToken: string ): Promise<ShoppingListsResponse>
         {
-            const response = await fetch( `${getServer()}${Endpoint}`, createAuthHeader( idToken ) );
+            const response = await fetch( `${getServer()}${Endpoint}`, createAutherizedRequest( idToken ) );
             const data = await response.json() as ShoppingListsResponse;
             return data;
         }

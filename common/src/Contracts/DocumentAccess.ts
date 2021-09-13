@@ -1,8 +1,7 @@
-import { ShoppingList } from "../Models/ShoppingListDefinitions";
-import { RequestHandler, Request, Response, request } from "express"
-import { useBearerToken } from "../Hooks/serverHooks";
-import { createAuthHeader as createAutherizedRequest } from "./Settings";
+import { Request, Response } from "express";
 import { getServer } from "..";
+import { useBearerToken } from "../Hooks/serverHooks";
+import { createAutherizedRequest } from "./Settings";
 
 export namespace DocumentAccess
 {

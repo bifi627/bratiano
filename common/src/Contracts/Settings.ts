@@ -1,5 +1,5 @@
 
-export function createAuthHeader( idToken: string )
+export function createAutherizedRequest( idToken: string )
 {
     return {
         headers: {
